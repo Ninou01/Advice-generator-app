@@ -79,7 +79,7 @@
   transition: box-shadow 200ms linear, -webkit-box-shadow 200ms linear;
 }
 
-.container .advice-box .dice:active {
+.container .advice-box .dice:hover {
   -webkit-box-shadow: 0 0 25px var(--Neon-Green);
           box-shadow: 0 0 25px var(--Neon-Green);
 }
