@@ -70,9 +70,20 @@
             }
         }
 
-        &content.hide {
-            height: 0;
-            opacity: 0;
+        // &content.hide {
+        //     height: 0;
+        //     opacity: 0;
+        // }
+
+        &content {
+            overflow: hidden;
+            transition: max-height 1.2s, opacity 1.2s;
+            max-height: 300px;
+
+            &.hide {
+                max-height: 0;
+                opacity: 0;
+            }
         }
 
         &number {

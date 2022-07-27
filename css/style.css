@@ -89,8 +89,15 @@
           animation: box-shadow-animation 0.5s linear 0s infinite alternate;
 }
 
+.container .advice-content {
+  overflow: hidden;
+  -webkit-transition: max-height 1.2s, opacity 1.2s;
+  transition: max-height 1.2s, opacity 1.2s;
+  max-height: 300px;
+}
+
 .container .advice-content.hide {
-  height: 0;
+  max-height: 0;
   opacity: 0;
 }
 

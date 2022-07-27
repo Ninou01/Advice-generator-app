@@ -15,11 +15,11 @@ let dice = document.querySelector(".dice")
 let adviceContent = document.querySelector(".advice-content")
 
 window.onload = () => {
-    data = JSON.parse(sessionStorage.getItem("advice"))
+    let data = JSON.parse(sessionStorage.getItem("advice"))
     if (data) {
         createQuote(data)
     } else {
-        main().then(() => dice.classList.add("animation"))
+        main()
     }
 }
 
@@ -47,16 +47,19 @@ function main() {
     let data = apiCall('https://api.adviceslip.com/advice')
     dice.classList.add("animation")
     adviceContent.classList.add("hide")
-    return new Promise((resolve, reject) => {
-        if (data) {
-            resolve(data)
-        } else {
-            reject(Error("couldn't fetch data"))
-        }
-    }).then(res => {
-        createQuote(res)
-        addToSessionStorage(res)
-        dice.classList.remove("animation")
-        adviceContent.classList.remove("hide")
-    })
+    adviceContent.ontransitionend = () => {
+        return new Promise((resolve, reject) => {
+            if (data) {
+                resolve(data)
+            } else {
+                reject(Error("couldn't fetch data"))
+            }
+        }).then(res => {
+            createQuote(res)
+            addToSessionStorage(res)
+            dice.classList.remove("animation")
+            adviceContent.classList.remove("hide")
+        })
+      };
 }
+
