@@ -1,0 +1,112 @@
+:root {
+    --Light-Cyan: hsl(193, 38%, 86%);
+    --Neon-Green: hsl(150, 100%, 66%);
+    --Grayish-Blue: hsl(217, 19%, 38%);
+    --Dark-Grayish-Blue: hsl(217, 19%, 24%);
+    --Dark-Blue: hsl(218, 23%, 16%);
+    --quote-font-size: 28px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+.mobile {
+    display: inline;
+}
+
+.desktop {
+    display: none;
+}
+
+.container {
+    font-family: 'Manrope';
+    height: 100vh;
+    padding: 0 20px;
+    background-color: var(--Dark-Blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    .advice- {
+        
+        &box {
+            position: relative;
+            text-align: center;
+            max-width: 550px;
+            background-color: var(--Dark-Grayish-Blue);
+            border-radius: 10px;
+            padding: 40px 20px;
+            box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.102);
+
+            .dice {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: -23px;
+                width: 50px;
+                height: 50px;
+                background-color: var(--Neon-Green);
+                border-radius: 50%;
+                cursor: pointer;
+                transition: box-shadow 200ms linear;
+
+                &:active {
+                    box-shadow: 0 0 25px var(--Neon-Green);
+                }
+            }
+
+            .dice.animation {
+                animation: box-shadow-animation 0.5s linear 0s infinite alternate;
+            }
+        }
+
+        &content.hide {
+            height: 0;
+            opacity: 0;
+        }
+
+        &number {
+            color: var(--Neon-Green);
+            letter-spacing: 4px;
+            font-size: 14px;
+        }
+
+        &text {
+            font-size: var(--quote-font-size);
+            color: var(--Light-Cyan);
+            margin: 35px 0;
+            display: inline-block;
+        }
+    }
+}
+
+
+@media screen and (min-width: 600px) {
+    .mobile {
+        display: none;
+    }
+    
+    .desktop {
+        display: inline;
+    }
+}
+
+@keyframes box-shadow-animation {
+    0% {
+        box-shadow: 0 0 25px var(--Neon-Green);
+    }
+    100% {
+        box-shadow: 0 0 40px var(--Neon-Green);
+    }
+}
+
