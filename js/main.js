@@ -15,13 +15,13 @@ let dice = document.querySelector(".dice")
 let adviceContent = document.querySelector(".advice-content")
 
 window.onload = () => {
+    dice.classList.add("animation")
     data = JSON.parse(sessionStorage.getItem("advice"))
     if (data) {
         createQuote(data)
     } else {
-        main()
+        main().then(() => dice.classList.add("animation"))
     }
-    dice.classList.add("animation")
 }
 
 dice.addEventListener("click", main)
