@@ -11,10 +11,7 @@ This is a solution to the [Advice generator app challenge on Frontend Mentor](ht
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 **Note: Delete this note and update the table of contents based on what sections you keep.**
 
@@ -36,8 +33,8 @@ This is a screenshot of my own solution
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://bit.ly/3cM5L3t)
-- Live Site URL: [Add live site URL here](https://bit.ly/3zdnGrb)
+- [Solution URL](https://bit.ly/3cM5L3t)
+- [Live Site URL](https://bit.ly/3zdnGrb)
 
 ## My process
 
